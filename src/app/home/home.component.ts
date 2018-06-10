@@ -78,6 +78,8 @@ Drilldown(Highcharts);
         this.loadChart();
     }, 
     error => {this.errorMsg = error
+        // now redirect to login
+        this.router.navigateByUrl('/home');
     console.log("ERROR ",this.errorMsg)});
   }
 

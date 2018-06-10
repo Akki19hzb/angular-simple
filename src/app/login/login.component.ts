@@ -63,7 +63,12 @@ export class LoginComponent implements OnInit {
           }
           this.router.navigateByUrl('/home');
           
-        })
+        },
+        error=>{
+          
+        }
+      
+      )
         ;
     else
       alert('Please provide info')    
