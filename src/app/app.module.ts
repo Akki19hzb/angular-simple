@@ -8,6 +8,8 @@ import {UserService} from './user/user.service';
 import {HttpClientModule} from "@angular/common/http";
 import {HomeComponent} from './home/home.component';
 import { LoginComponent } from './login/login.component';
+import { PopulationService } from "./population/population.service";
+import { AuthGuard } from "./_guards/index";
 
 
 @NgModule({
@@ -21,7 +23,7 @@ import { LoginComponent } from './login/login.component';
     HttpClientModule,
     FormsModule
   ],
-  providers: [UserService],
+  providers: [UserService,AuthGuard, PopulationService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

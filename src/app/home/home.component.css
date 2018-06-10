@@ -1,0 +1,32 @@
+.navbar {
+    margin-bottom: 0;
+    border-radius: 0;
+  }
+.logouticon
+  {
+      float: right;
+      padding-right: 23px;
+      padding-top: 5px;
+      color: white;
+      text-decoration: none;
+  }
+  
+
+
+  .navbar-inverse .navbar-nav>li>.logouticon {
+    color: #9d9d9d;
+}
+
+.navbar-nav>li>.logouticon {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    line-height: 20px;
+}
+.nav>li>.logouticon {
+    position: relative;
+    display: block;
+    padding: 10px 15px;
+}
+.logouticon {
+  
+}
