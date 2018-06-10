@@ -56,7 +56,9 @@ export class LoginComponent implements OnInit {
           console.log("Welcome" + data);
           if(data.email!=null&&data.password!=null)      
           {  
-          console.log('success');
+          localStorage.setItem('email',data.email)
+          localStorage.setItem('password',data.password)
+          localStorage.setItem('valid','true')
           alert("User logged in successfully.");
           }
           this.router.navigateByUrl('/home');

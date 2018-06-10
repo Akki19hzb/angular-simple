@@ -31,12 +31,11 @@ Drilldown(Highcharts);
   }
 
   ngOnInit() {
-    this.convertData()
-    this.loadChart();
+    this.getData();
   
   }
   convertData(){
-    this.population_result= [{"year":2010,"total":579,"male":613,"female":1192},{"year":2011,"total":588,"male":623,"female":1211},{"year":2012,"total":599,"male":634,"female":1233},{"year":2013,"total":607,"male":643,"female":1250},{"year":2014,"total":616,"male":650,"female":1266},{"year":2015,"total":624,"male":658,"female":1282},{"year":2017,"total":640,"male":676,"female":1316},{"year":2018,"total":648,"male":686,"female":1334}];
+    // this.population_result= [{"year":2010,"total":579,"male":613,"female":1192},{"year":2011,"total":588,"male":623,"female":1211},{"year":2012,"total":599,"male":634,"female":1233},{"year":2013,"total":607,"male":643,"female":1250},{"year":2014,"total":616,"male":650,"female":1266},{"year":2015,"total":624,"male":658,"female":1282},{"year":2017,"total":640,"male":676,"female":1316},{"year":2018,"total":648,"male":686,"female":1334}];
     this.series={
       name:'Population',
       data:[]
@@ -73,8 +72,13 @@ Drilldown(Highcharts);
 
     console.log("HOME COMP")
     this.populationService.getPopulation().
-    subscribe(data => this.population_result = data,
-    error => this.errorMsg = error);
+    subscribe(data =>{this.population_result = data
+        console.log("DATA===33=3",this.population_result)
+        this.convertData()
+        this.loadChart();
+    }, 
+    error => {this.errorMsg = error
+    console.log("ERROR ",this.errorMsg)});
   }
 
   loadChart(){
