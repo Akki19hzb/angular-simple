@@ -13,7 +13,7 @@ export class PopulationService {
 
   constructor(private http:HttpClient) {}
 
-  private populationUrl = '/api';
+  private populationUrl = 'api';
 
   public getPopulation() {
     
